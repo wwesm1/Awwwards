@@ -1,3 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: "Inter Tight", sans-serif;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+input {
+  outline: none;
+  caret: 1px;
+}
+
+nav img {
+  width: 15px;
+}
 
 /*# sourceMappingURL=style.css.map */
