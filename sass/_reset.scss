@@ -43,11 +43,10 @@ input {
 }
 
 .hover-underline {
-    text-decoration: none;
     color: #333;
     position: relative;
     display: inline-block;
-    padding-bottom: 4px;
+    padding-bottom: 1px;
     border-bottom: 2px solid #ccc;
 
     &::after {
