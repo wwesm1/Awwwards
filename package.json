@@ -7,6 +7,6 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "sass-watch": "sass --watch sass/main.scss:styles/style.css"
+    "sass": "sass --watch sass/main.scss:styles/style.css"
   }
 }
