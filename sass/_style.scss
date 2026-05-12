@@ -2,4 +2,42 @@ nav {
     img {
         width: $svg_size;
     }
+
+    .input-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        max-width: 320px;
+
+        .field-icon {
+            position: absolute;
+            left: 12px;
+            width: 20px; // Set a specific size for your image
+            height: 20px;
+            object-fit: contain; // Ensures the image doesn't stretch
+            pointer-events: none;
+            opacity: 0.6; // Give it a slightly muted look to match the placeholder
+            transition: opacity 0.3s ease;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 12px 12px 42px; // Left padding must be larger than icon + left offset
+            border: 1.5px solid #e1e1e1;
+            border-radius: 10px;
+            font-family: 'Inter Tight', sans-serif;
+            font-size: 15px;
+            transition: all 0.3s ease;
+
+            &:focus {
+                border-color: #000;
+                box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+
+                // Make the image icon pop when the user clicks the input
+                &~.field-icon {
+                    opacity: 1;
+                }
+            }
+        }
+    }
 }
