@@ -9,7 +9,11 @@ body {
     font-family: $font-main;
 }
 
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
     display: block;
     max-width: 100%;
 }
@@ -36,4 +40,28 @@ input {
 .container {
     margin: 1rem auto;
     max-width: 1400px;
+}
+
+.hover-underline {
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 4px;
+    border-bottom: 2px solid #ccc;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px; 
+        width: 0;
+        height: 2px;
+        background-color: #000;
+        transition: width 0.3s ease-in-out;
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
 }

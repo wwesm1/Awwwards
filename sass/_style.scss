@@ -9,6 +9,12 @@ nav {
             @include flex-center;
             gap: 3px;
             font-size: $fs-14;
+            cursor: pointer;
+            transition: $tr;
+
+            &:hover {
+                color: #5b5b5b;
+            }
 
             a {
                 font-size: $fs-14;
@@ -66,81 +72,66 @@ nav {
 
     .input-container {
         position: relative;
-        display: flex;
-        align-items: center;
-        max-width: 320px;
+        @include flex-center;
+        width: 590px;
 
         .field-icon {
             position: absolute;
-            left: 12px;
-            width: 20px; // Set a specific size for your image
+            left: 14px;
+            width: 15px;
             height: 20px;
-            object-fit: contain; // Ensures the image doesn't stretch
+            object-fit: contain;
             pointer-events: none;
-            opacity: 0.6; // Give it a slightly muted look to match the placeholder
+            opacity: 0.6;
             transition: opacity 0.3s ease;
         }
 
         input {
             width: 100%;
-            padding: 12px 12px 12px 42px; // Left padding must be larger than icon + left offset
-            border: 1.5px solid #e1e1e1;
-            border-radius: 10px;
-            font-family: 'Inter Tight', sans-serif;
-            font-size: 15px;
+            padding: 12px 100px 12px 38px;
+            background-color: #e1e1e1;
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
             transition: all 0.3s ease;
+            height: 43px;
 
-            &:focus {
-                border-color: #000;
-                box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
-
-                // Make the image icon pop when the user clicks the input
-                &~.field-icon {
-                    opacity: 1;
-                }
+            &::placeholder {
+                color: #333333;
             }
         }
     }
 
-    img {
-        width: $svg_size;
+    .regester {
+        @include flex-center;
+        gap: 18px;
+
+        p {
+            font-size: $fs-14;
+            font-weight: $fw-600;
+            cursor: pointer;
+        }
     }
 
-    .input-container {
-        position: relative;
-        display: flex;
-        align-items: center;
-        max-width: 320px;
+    .nav__btns {
+        @include flex-center;
+        gap: 20px;
 
-        .field-icon {
-            position: absolute;
-            left: 12px;
-            width: 20px; // Set a specific size for your image
-            height: 20px;
-            object-fit: contain; // Ensures the image doesn't stretch
-            pointer-events: none;
-            opacity: 0.6; // Give it a slightly muted look to match the placeholder
-            transition: opacity 0.3s ease;
+        button {
+            padding: 12px 17px;
+            font-size: $fs-14;
+            border-radius: 8px;
         }
 
-        input {
-            width: 100%;
-            padding: 12px 12px 12px 42px; // Left padding must be larger than icon + left offset
-            border: 1.5px solid #e1e1e1;
-            border-radius: 10px;
-            font-family: 'Inter Tight', sans-serif;
-            font-size: 15px;
-            transition: all 0.3s ease;
+        .pro {
+            background-color: $black-color;
+            color: $white-color;
+            border: 1px solid $black-color;
+        }
 
-            &:focus {
-                border-color: #000;
-                box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
-
-                // Make the image icon pop when the user clicks the input
-                &~.field-icon {
-                    opacity: 1;
-                }
-            }
+        .submit {
+            background-color: $white-color;
+            border: 1px solid $black-color;
         }
     }
 }
