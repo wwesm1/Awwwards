@@ -12,3 +12,36 @@ $black-color: #000;
 $white-color: #fff;
 $font-size: 12px;
 $shine-duration: 20s;
+$color-bg: #f2f2f0;
+$color-white: #ffffff;
+$color-text-primary: #1a1a1a;
+$color-text-secondary: #6b6b6b;
+$color-text-muted: #9a9a9a;
+$color-border: #e8e8e6;
+$color-hover-bg: #f5f5f3;
+$color-active-bg: #efefed;
+$color-overlay: rgba(0, 0, 0, 0.18);
+
+$font-family: 'Inter', 'Helvetica Neue', sans-serif;
+$font-size-sm: 0.8125rem; // 13px
+$font-size-base: 0.9375rem; // 15px
+$font-size-md: 1rem; // 16px
+
+$radius-input: 9999px;
+$radius-modal: 16px;
+
+$input-height: 44px;
+$input-padding-x: 18px;
+$input-icon-size: 18px;
+$input-gap: 10px;
+
+$modal-width: 720px;
+$modal-sidebar-width: 180px;
+$modal-padding: 24px;
+
+$shadow-modal: 0 8px 40px rgba(0, 0, 0, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.06);
+
+$transition-fast: 0.15s ease;
+$transition-base: 0.22s ease;
+$transition-modal: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
