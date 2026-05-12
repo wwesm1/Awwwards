@@ -1,42 +1,103 @@
 nav {
-    img {
-        width: $svg_size;
-    }
+    @include flex-space-between;
 
-    .input-container {
-        position: relative;
-        display: flex;
-        align-items: center;
-        max-width: 320px;
+    .nav__items {
+        @include flex-space-between;
+        gap: 18px;
 
-        .field-icon {
-            position: absolute;
-            left: 12px;
-            width: 20px; // Set a specific size for your image
-            height: 20px;
-            object-fit: contain; // Ensures the image doesn't stretch
-            pointer-events: none;
-            opacity: 0.6; // Give it a slightly muted look to match the placeholder
-            transition: opacity 0.3s ease;
+        li {
+            @include flex-center;
+            gap: 3px;
+            font-size: $fs-14;
+
+            a {
+                font-size: $fs-14;
+            }
         }
 
-        input {
-            width: 100%;
-            padding: 12px 12px 12px 42px; // Left padding must be larger than icon + left offset
-            border: 1.5px solid #e1e1e1;
-            border-radius: 10px;
-            font-family: 'Inter Tight', sans-serif;
-            font-size: 15px;
-            transition: all 0.3s ease;
+        #academy {
+            position: relative;
+            display: inline-block;
 
-            &:focus {
-                border-color: #000;
-                box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+            &::after {
+                content: "NEW";
+                position: absolute;
+                top: -10px;
+                right: -10px;
+                background-color: #000;
+                color: #fff;
+                font-size: 12px;
+                font-weight: 600;
+                padding: 2px 6px;
+                border-radius: 4px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
 
-                // Make the image icon pop when the user clicks the input
-                &~.field-icon {
-                    opacity: 1;
-                }
+                // Wider beam: The white area now spans from 30% to 70% of the gradient
+                background-image: linear-gradient(135deg,
+                        transparent 30%,
+                        rgba(255, 255, 255, 0.4) 50%,
+                        transparent 70%);
+                background-size: 400% 400%; // Increased size to accommodate the wider beam
+                background-repeat: no-repeat;
+                background-position: 0% 0%;
+                animation: shine-diagonal 5s infinite linear;
+            }
+        }
+
+        @keyframes shine-diagonal {
+
+            0%,
+            90% {
+                background-position: 0% 0%;
+            }
+
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+    }
+}
+
+img {
+    width: $svg_size;
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 320px;
+
+    .field-icon {
+        position: absolute;
+        left: 12px;
+        width: 20px; // Set a specific size for your image
+        height: 20px;
+        object-fit: contain; // Ensures the image doesn't stretch
+        pointer-events: none;
+        opacity: 0.6; // Give it a slightly muted look to match the placeholder
+        transition: opacity 0.3s ease;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px 12px 12px 42px; // Left padding must be larger than icon + left offset
+        border: 1.5px solid #e1e1e1;
+        border-radius: 10px;
+        font-family: 'Inter Tight', sans-serif;
+        font-size: 15px;
+        transition: all 0.3s ease;
+
+        &:focus {
+            border-color: #000;
+            box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+
+            // Make the image icon pop when the user clicks the input
+            &~.field-icon {
+                opacity: 1;
             }
         }
     }

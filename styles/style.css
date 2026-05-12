@@ -33,16 +33,77 @@ input {
   caret: 1px;
 }
 
-nav img {
+.container {
+  margin: 1rem auto;
+  max-width: 1400px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav .nav__items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+nav .nav__items li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  font-size: 14px;
+}
+nav .nav__items li a {
+  font-size: 14px;
+}
+nav .nav__items #academy {
+  position: relative;
+  display: inline-block;
+}
+nav .nav__items #academy::after {
+  content: "NEW";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #000;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-image: linear-gradient(135deg, transparent 30%, rgba(255, 255, 255, 0.4) 50%, transparent 70%);
+  background-size: 400% 400%;
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  animation: shine-diagonal 5s infinite linear;
+}
+@keyframes shine-diagonal {
+  0%, 90% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+img {
   width: 15px;
 }
-nav .input-container {
+
+.input-container {
   position: relative;
   display: flex;
   align-items: center;
   max-width: 320px;
 }
-nav .input-container .field-icon {
+.input-container .field-icon {
   position: absolute;
   left: 12px;
   width: 20px;
@@ -52,7 +113,7 @@ nav .input-container .field-icon {
   opacity: 0.6;
   transition: opacity 0.3s ease;
 }
-nav .input-container input {
+.input-container input {
   width: 100%;
   padding: 12px 12px 12px 42px;
   border: 1.5px solid #e1e1e1;
@@ -61,11 +122,11 @@ nav .input-container input {
   font-size: 15px;
   transition: all 0.3s ease;
 }
-nav .input-container input:focus {
+.input-container input:focus {
   border-color: #000;
   box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
 }
-nav .input-container input:focus ~ .field-icon {
+.input-container input:focus ~ .field-icon {
   opacity: 1;
 }
 
