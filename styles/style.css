@@ -39,7 +39,7 @@ input {
 
 .container {
   margin: 0rem auto;
-  padding: 1rem 4rem;
+  padding: 1rem 3rem;
   max-width: 1600px;
   width: 100%;
 }
@@ -185,10 +185,20 @@ nav .nav__btns .pro {
   background-color: #000;
   color: #fff;
   border: 1px solid #000;
+  transition: all 0.3s ease;
+  background-color: #222222;
+}
+nav .nav__btns .pro:hover {
+  background-color: #383838;
 }
 nav .nav__btns .submit {
   background-color: #E9E9E9;
   border: 1px solid #000;
+  transition: all 0.3s ease;
+}
+nav .nav__btns .submit:hover {
+  background-color: #383838;
+  color: #fff;
 }
 
 main .hero {
@@ -259,20 +269,58 @@ main .nominies .nominiees p {
   text-align: center;
   left: 25pc;
 }
+main .nominies .nominiess_cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 main .nominies .vote {
   margin-top: 2rem;
   margin-bottom: 5rem;
   text-align: center;
   font-size: 22px;
 }
-main .nominies .nominiess_cards .nominiess_card {
+main .nominies .nominiess_card {
   position: relative;
-}
-main .nominies .nominiess_cards .nominiess_card .main_img {
-  width: 470px;
+  width: 460px;
+  overflow: hidden;
   border-radius: 15px;
 }
-main .nominies .nominiess_cards .nominiess_card .vote_now {
+main .nominies .nominiess_card::before,
+main .nominies .nominiess_card .vote_now,
+main .nominies .nominiess_card .smth {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+main .nominies .nominiess_card:hover::before,
+main .nominies .nominiess_card:hover .vote_now,
+main .nominies .nominiess_card:hover .smth {
+  opacity: 1;
+  visibility: visible;
+}
+main .nominies .nominiess_card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+  z-index: 1;
+  pointer-events: none;
+}
+main .nominies .nominiess_card .main_img {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 0;
+  border-radius: 15px;
+}
+main .nominies .nominiess_card .vote_now,
+main .nominies .nominiess_card .smth,
+main .nominies .nominiess_card .web_maker {
+  position: relative;
+  z-index: 2;
+}
+main .nominies .nominiess_card .vote_now {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -285,13 +333,97 @@ main .nominies .nominiess_cards .nominiess_card .vote_now {
   background-color: #fff;
   padding: 13px 16px;
   border-radius: 8px;
+  transition: all 0.3s ease;
+}
+main .nominies .nominiess_card .vote_now:hover {
+  color: #fff;
+  background-color: #383838;
+}
+main .nominies .nominiess_card .vote_now:hover img {
+  filter: brightness(0) invert(1);
+}
+main .nominies .nominiess_card .vote_now img {
+  transition: all 0.3s ease;
+  width: 21px;
+}
+main .nominies .nominiess_card .smth {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main .nominies .nominiess_card .smth .web {
+  position: absolute;
+  top: -80px;
+  font-size: 14px;
+  color: #fff;
+  left: 30px;
+  font-weight: 300;
+}
+main .nominies .nominiess_card .smth .web_title {
+  position: absolute;
+  top: -52px;
+  left: 30px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+}
+main .nominies .nominiess_card .smth .web_icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  right: 0;
+}
+main .nominies .nominiess_card .smth .web_icons .move {
+  position: relative;
+  bottom: 45px;
+  right: 45px;
+}
+main .nominies .nominiess_card .smth .web_icons .bookmark {
+  position: relative;
+  bottom: 45px;
+  right: 30px;
+}
+main .nominies .nominiess_card .smth .web_icons img {
+  width: 30px;
+  filter: brightness(0) invert(1);
+}
+main .nominies .hero__desctiption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .nominies .hero__desctiption img {
+  width: 30px;
+  border-radius: 50%;
+}
+main .nominies .hero__desctiption a {
+  font-size: 20px;
+}
+main .nominies .hero__desctiption span {
+  font-size: 9px;
+  margin-left: 5px;
+  margin-bottom: 12px;
+}
+main .web_maker {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-top: 1rem;
+  gap: 13px;
+}
+main .web_maker .web_name {
+  font-size: 20px;
+}
+main .web_maker .small {
+  font-size: 10px;
+  color: #383838;
 }
 
 .hero__desctiption {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
 }
 .hero__desctiption img {
   width: 30px;
