@@ -1,5 +1,6 @@
 nav {
     @include flex-space-between;
+    background-color: $light-grey;
 
     .nav__items {
         @include flex-space-between;
@@ -73,7 +74,7 @@ nav {
     .input-container {
         position: relative;
         @include flex-center;
-        width: 590px;
+        width: 500px;
 
         .field-icon {
             position: absolute;
@@ -130,8 +131,141 @@ nav {
         }
 
         .submit {
-            background-color: $white-color;
+            background-color: $light-grey;
             border: 1px solid $black-color;
         }
+    }
+}
+
+main {
+
+    .hero {
+        background-color: $light-grey;
+        padding: 4rem 0;
+
+        .hero__btns {
+            @include flex-center;
+            gap: 20px;
+
+            button {
+                background-color: $light-grey;
+                color: rgb(62, 62, 62);
+                font-size: $fs-14;
+            }
+
+            .middle {
+                color: $black-color;
+                border: 1px solid rgb(173, 173, 173);
+                padding: 3px 7px;
+                border-radius: 5px;
+            }
+        }
+
+        .hero__title {
+            font-size: 8pc;
+            font-weight: $fw-600;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .hero__desctiption {
+            @include flex-center;
+            gap: 10px;
+
+            img {
+                width: 30px;
+                border-radius: 50%;
+            }
+
+            a {
+                font-size: $fs-20;
+            }
+
+            span {
+                font-size: 9px;
+                margin-left: -2px;
+                margin-bottom: 12px;
+            }
+        }
+
+        .happy {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 25px;
+            margin-top: 3rem;
+        }
+    }
+
+    .nominies {
+        margin: 4rem auto;
+
+        .latest {
+            font-size: $fs-14;
+            text-align: center;
+        }
+
+        .nominiees {
+            text-align: center;
+
+            p {
+                font-size: 8pc;
+                font-weight: $fw-600;
+                position: absolute;
+                text-align: center;
+                left: 25pc;
+            }
+        }
+
+        .vote {
+            margin-top: 2rem;
+            margin-bottom: 5rem;
+            text-align: center;
+            font-size: $fs-22
+        }
+
+        .nominiess_cards {
+
+            .nominiess_card {
+                position: relative;
+                
+                .main_img {
+                    width: 470px;
+                    border-radius: 15px;
+                }
+
+                .vote_now {
+                    @include flex-center;
+                    position: absolute;
+                    top: 10pc;
+                    left: 11pc;
+                    gap: 10px;
+                    font-size: $fs-14;
+                    font-weight: 400;
+                    background-color: $white-color;
+                    padding: 13px 16px;
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+}
+
+.hero__desctiption {
+    @include flex-center;
+    gap: 10px;
+
+    img {
+        width: 30px;
+        border-radius: 50%;
+    }
+
+    a {
+        font-size: $fs-20;
+    }
+
+    span {
+        font-size: 9px;
+        margin-left: -2px;
+        margin-bottom: 12px;
     }
 }

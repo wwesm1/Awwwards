@@ -38,15 +38,17 @@ input {
 }
 
 .container {
-  margin: 1rem auto;
-  max-width: 1400px;
+  margin: 0rem auto;
+  padding: 1rem 4rem;
+  max-width: 1600px;
+  width: 100%;
 }
 
 .hover-underline {
   color: #333;
   position: relative;
   display: inline-block;
-  padding-bottom: 1px;
+  padding-bottom: 2px;
   border-bottom: 2px solid #ccc;
 }
 .hover-underline::after {
@@ -67,6 +69,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #E9E9E9;
 }
 nav .nav__items {
   display: flex;
@@ -131,7 +134,7 @@ nav .input-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 590px;
+  width: 500px;
 }
 nav .input-container .field-icon {
   position: absolute;
@@ -184,8 +187,123 @@ nav .nav__btns .pro {
   border: 1px solid #000;
 }
 nav .nav__btns .submit {
-  background-color: #fff;
+  background-color: #E9E9E9;
   border: 1px solid #000;
+}
+
+main .hero {
+  background-color: #E9E9E9;
+  padding: 4rem 0;
+}
+main .hero .hero__btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+main .hero .hero__btns button {
+  background-color: #E9E9E9;
+  color: rgb(62, 62, 62);
+  font-size: 14px;
+}
+main .hero .hero__btns .middle {
+  color: #000;
+  border: 1px solid rgb(173, 173, 173);
+  padding: 3px 7px;
+  border-radius: 5px;
+}
+main .hero .hero__title {
+  font-size: 8pc;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 1rem;
+}
+main .hero .hero__desctiption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+main .hero .hero__desctiption img {
+  width: 30px;
+  border-radius: 50%;
+}
+main .hero .hero__desctiption a {
+  font-size: 20px;
+}
+main .hero .hero__desctiption span {
+  font-size: 9px;
+  margin-left: -2px;
+  margin-bottom: 12px;
+}
+main .hero .happy {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 25px;
+  margin-top: 3rem;
+}
+main .nominies {
+  margin: 4rem auto;
+}
+main .nominies .latest {
+  font-size: 14px;
+  text-align: center;
+}
+main .nominies .nominiees {
+  text-align: center;
+}
+main .nominies .nominiees p {
+  font-size: 8pc;
+  font-weight: 600;
+  position: absolute;
+  text-align: center;
+  left: 25pc;
+}
+main .nominies .vote {
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+  text-align: center;
+  font-size: 22px;
+}
+main .nominies .nominiess_cards .nominiess_card {
+  position: relative;
+}
+main .nominies .nominiess_cards .nominiess_card .main_img {
+  width: 470px;
+  border-radius: 15px;
+}
+main .nominies .nominiess_cards .nominiess_card .vote_now {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10pc;
+  left: 11pc;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #fff;
+  padding: 13px 16px;
+  border-radius: 8px;
+}
+
+.hero__desctiption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.hero__desctiption img {
+  width: 30px;
+  border-radius: 50%;
+}
+.hero__desctiption a {
+  font-size: 20px;
+}
+.hero__desctiption span {
+  font-size: 9px;
+  margin-left: -2px;
+  margin-bottom: 12px;
 }
 
 /*# sourceMappingURL=style.css.map */
