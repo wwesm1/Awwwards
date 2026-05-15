@@ -50,6 +50,7 @@ input {
   display: inline-block;
   padding-bottom: 2px;
   border-bottom: 2px solid #ccc;
+  cursor: pointer;
 }
 .hover-underline::after {
   content: "";
@@ -269,58 +270,58 @@ main .nominies .nominiees p {
   text-align: center;
   left: 25pc;
 }
-main .nominies .nominiess_cards {
+main .cards {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-main .nominies .vote {
+main .vote {
   margin-top: 2rem;
   margin-bottom: 5rem;
   text-align: center;
   font-size: 22px;
 }
-main .nominies .nominiess_card {
+main .img_card {
   position: relative;
   width: 460px;
   overflow: hidden;
   border-radius: 15px;
 }
-main .nominies .nominiess_card::before,
-main .nominies .nominiess_card .vote_now,
-main .nominies .nominiess_card .smth {
+main .img_card::before,
+main .img_card .vote_now,
+main .img_card .smth {
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
 }
-main .nominies .nominiess_card:hover::before,
-main .nominies .nominiess_card:hover .vote_now,
-main .nominies .nominiess_card:hover .smth {
+main .img_card:hover::before,
+main .img_card:hover .vote_now,
+main .img_card:hover .smth {
   opacity: 1;
   visibility: visible;
 }
-main .nominies .nominiess_card::before {
+main .img_card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   z-index: 1;
   pointer-events: none;
 }
-main .nominies .nominiess_card .main_img {
+main .img_card .main_img {
   width: 100%;
   display: block;
   position: relative;
   z-index: 0;
   border-radius: 15px;
 }
-main .nominies .nominiess_card .vote_now,
-main .nominies .nominiess_card .smth,
-main .nominies .nominiess_card .web_maker {
+main .img_card .vote_now,
+main .img_card .smth,
+main .img_card .web_maker {
   position: relative;
   z-index: 2;
 }
-main .nominies .nominiess_card .vote_now {
+main .img_card .vote_now {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -335,23 +336,23 @@ main .nominies .nominiess_card .vote_now {
   border-radius: 8px;
   transition: all 0.3s ease;
 }
-main .nominies .nominiess_card .vote_now:hover {
+main .img_card .vote_now:hover {
   color: #fff;
   background-color: #383838;
 }
-main .nominies .nominiess_card .vote_now:hover img {
+main .img_card .vote_now:hover img {
   filter: brightness(0) invert(1);
 }
-main .nominies .nominiess_card .vote_now img {
+main .img_card .vote_now img {
   transition: all 0.3s ease;
   width: 21px;
 }
-main .nominies .nominiess_card .smth {
+main .img_card .smth {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-main .nominies .nominiess_card .smth .web {
+main .img_card .smth .web {
   position: absolute;
   top: -80px;
   font-size: 14px;
@@ -359,7 +360,7 @@ main .nominies .nominiess_card .smth .web {
   left: 30px;
   font-weight: 300;
 }
-main .nominies .nominiess_card .smth .web_title {
+main .img_card .smth .web_title {
   position: absolute;
   top: -52px;
   left: 30px;
@@ -367,55 +368,184 @@ main .nominies .nominiess_card .smth .web_title {
   font-size: 20px;
   font-weight: 400;
 }
-main .nominies .nominiess_card .smth .web_icons {
+main .img_card .smth .web_icons {
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: absolute;
   right: 0;
 }
-main .nominies .nominiess_card .smth .web_icons .move {
+main .img_card .smth .web_icons .move {
   position: relative;
   bottom: 45px;
   right: 45px;
 }
-main .nominies .nominiess_card .smth .web_icons .bookmark {
+main .img_card .smth .web_icons .bookmark {
   position: relative;
   bottom: 45px;
   right: 30px;
 }
-main .nominies .nominiess_card .smth .web_icons img {
+main .img_card .smth .web_icons img {
   width: 30px;
   filter: brightness(0) invert(1);
 }
-main .nominies .hero__desctiption {
+main .hero__desctiption {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 7px;
 }
-main .nominies .hero__desctiption img {
+main .hero__desctiption img {
   width: 30px;
   border-radius: 50%;
 }
-main .nominies .hero__desctiption a {
+main .hero__desctiption a {
   font-size: 20px;
 }
-main .nominies .hero__desctiption span {
+main .hero__desctiption span {
   font-size: 9px;
-  margin-left: 5px;
+  margin-left: 0;
   margin-bottom: 12px;
 }
-main .web_maker {
+main .winners .cards {
+  margin-bottom: 2rem;
+}
+main .academy .winner {
+  margin-top: 10rem;
+}
+main .academy .cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  width: 500px;
+  gap: 30px;
+  padding: 20px;
+}
+main .academy .card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  cursor: pointer;
+}
+main .academy .card__image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 66.67%;
+  overflow: hidden;
+  background: #f9f9f9;
+}
+main .academy .card__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+main .academy .card__content {
+  padding: 28px 24px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-grow: 1;
+}
+main .academy .card__title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #000;
+  margin-bottom: 3rem;
+  letter-spacing: -0.4px;
+}
+main .academy .card__meta {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: auto;
+}
+main .academy .card__instructor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+main .academy .card__instructor-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+main .academy .card__instructor-name {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+main .academy .card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+}
+main .academy .card__footer img {
+  width: 24px;
+  height: 24px;
+}
+main .academy .card__score-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+main .academy .card__score-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+}
+main .academy .card__score-text {
+  font-size: 14px;
+  color: #000;
+  font-weight: 400;
+}
+main .academy .card__score-bar {
+  width: 100px;
+  height: 4px;
+  background: #e5e5e5;
+  border-radius: 5px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+main .academy .card__score-bar-fill {
+  height: 100%;
+  background: #FFF083;
+  border-radius: 2px;
+}
+
+.winner {
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
+
+.winners_title {
+  font-size: 43px;
+  margin-bottom: 5rem;
+  font-weight: 600;
+}
+
+.web_maker {
   display: flex;
   align-items: center;
   justify-content: start;
   margin-top: 1rem;
   gap: 13px;
 }
-main .web_maker .web_name {
+.web_maker .web_name {
   font-size: 20px;
 }
-main .web_maker .small {
+.web_maker .small {
   font-size: 10px;
   color: #383838;
 }
@@ -436,6 +566,33 @@ main .web_maker .small {
   font-size: 9px;
   margin-left: -2px;
   margin-bottom: 12px;
+}
+
+.submitted {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+  gap: 17px;
+}
+.submitted .view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .card__title {
+    font-size: 18px;
+  }
+  .card__content {
+    padding: 24px 20px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

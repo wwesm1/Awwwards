@@ -227,173 +227,315 @@ main {
                 left: 25pc;
             }
         }
+    }
 
-        .nominiess_cards {
-            @include flex-space-between;
+    .cards {
+        @include flex-space-between;
+    }
+
+    .vote {
+        margin-top: 2rem;
+        margin-bottom: 5rem;
+        text-align: center;
+        font-size: $fs-22
+    }
+
+    .img_card {
+        position: relative;
+        width: 460px;
+        overflow: hidden;
+        border-radius: 15px;
+
+        &::before,
+        .vote_now,
+        .smth {
+            opacity: 0;
+            visibility: hidden;
+            transition: $tr;
         }
 
-        .vote {
-            margin-top: 2rem;
-            margin-bottom: 5rem;
-            text-align: center;
-            font-size: $fs-22
-        }
-
-        .nominiess_card {
-            position: relative;
-            width: 460px;
-            overflow: hidden;
-            border-radius: 15px;
+        &:hover {
 
             &::before,
             .vote_now,
             .smth {
-                opacity: 0;
-                visibility: hidden;
-                transition: $tr;
-            }
-
-            &:hover {
-
-                &::before,
-                .vote_now,
-                .smth {
-                    opacity: 1;
-                    visibility: visible;
-                }
-            }
-
-            &::before {
-                content: "";
-                position: absolute;
-                inset: 0;
-                background: linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
-                z-index: 1;
-                pointer-events: none;
-            }
-
-            .main_img {
-                width: 100%;
-                display: block;
-                position: relative;
-                z-index: 0;
-                border-radius: 15px;
-            }
-
-            .vote_now,
-            .smth,
-            .web_maker {
-                position: relative;
-                z-index: 2;
-            }
-
-            .vote_now {
-                @include flex-center;
-                position: absolute;
-                top: 10pc;
-                left: 11pc;
-                gap: 10px;
-                font-size: $fs-14;
-                font-weight: 400;
-                background-color: $white-color;
-                padding: 13px 16px;
-                border-radius: 8px;
-                transition: $tr;
-
-                &:hover {
-                    color: $white-color;
-                    background-color: $grey;
-                }
-
-                &:hover img {
-                    filter: brightness(0) invert(1);
-                }
-
-                img {
-                    transition: $tr;
-                    width: 21px;
-                }
-            }
-
-            .smth {
-                @include flex-space-between;
-
-                .web {
-                    position: absolute;
-                    top: -80px;
-                    font-size: $fs-14;
-                    color: $white-color;
-                    left: 30px;
-                    font-weight: $fw-300;
-                }
-
-                .web_title {
-                    position: absolute;
-                    top: -52px;
-                    left: 30px;
-                    color: $white-color;
-                    font-size: $fs-20;
-                    font-weight: $fw-400;
-                }
-
-                .web_icons {
-                    @include flex-space-between;
-                    position: absolute;
-                    right: 0;
-
-                    .move {
-                        position: relative;
-                        bottom: 45px;
-                        right: 45px;
-                    }
-
-                    .bookmark {
-                        position: relative;
-                        bottom: 45px;
-                        right: 30px;
-                    }
-
-                    img {
-                        width: 30px;
-                        filter: brightness(0) invert(1);
-                    }
-                }
+                opacity: 1;
+                visibility: visible;
             }
         }
 
-        .hero__desctiption {
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .main_img {
+            width: 100%;
+            display: block;
+            position: relative;
+            z-index: 0;
+            border-radius: 15px;
+        }
+
+        .vote_now,
+        .smth,
+        .web_maker {
+            position: relative;
+            z-index: 2;
+        }
+
+        .vote_now {
             @include flex-center;
+            position: absolute;
+            top: 10pc;
+            left: 11pc;
+            gap: 10px;
+            font-size: $fs-14;
+            font-weight: 400;
+            background-color: $white-color;
+            padding: 13px 16px;
+            border-radius: 8px;
+            transition: $tr;
+
+            &:hover {
+                color: $white-color;
+                background-color: $grey;
+            }
+
+            &:hover img {
+                filter: brightness(0) invert(1);
+            }
 
             img {
-                width: 30px;
-                border-radius: 50%;
+                transition: $tr;
+                width: 21px;
+            }
+        }
+
+        .smth {
+            @include flex-space-between;
+
+            .web {
+                position: absolute;
+                top: -80px;
+                font-size: $fs-14;
+                color: $white-color;
+                left: 30px;
+                font-weight: $fw-300;
             }
 
-            a {
+            .web_title {
+                position: absolute;
+                top: -52px;
+                left: 30px;
+                color: $white-color;
                 font-size: $fs-20;
+                font-weight: $fw-400;
             }
 
-            span {
-                font-size: 9px;
-                margin-left: 5px;
-                margin-bottom: 12px;
+            .web_icons {
+                @include flex-space-between;
+                position: absolute;
+                right: 0;
+
+                .move {
+                    position: relative;
+                    bottom: 45px;
+                    right: 45px;
+                }
+
+                .bookmark {
+                    position: relative;
+                    bottom: 45px;
+                    right: 30px;
+                }
+
+                img {
+                    width: 30px;
+                    filter: brightness(0) invert(1);
+                }
             }
         }
     }
 
-    .web_maker {
-        @include flex-start;
-        margin-top: 1rem;
-        gap: 13px;
+    .hero__desctiption {
+        @include flex-center;
+        gap: 7px;
 
-        .web_name {
+        img {
+            width: 30px;
+            border-radius: 50%;
+        }
+
+        a {
             font-size: $fs-20;
         }
 
-        .small {
-            font-size: 10px;
-            color: $grey;
+        span {
+            font-size: 9px;
+            margin-left: 0;
+            margin-bottom: 12px;
         }
+    }
+
+    .winners {
+
+        .cards {
+            margin-bottom: 2rem;
+        }
+    }
+
+    .academy {
+        .winner {
+            margin-top: 10rem;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            width: 500px;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            @include flex-column;
+            height: 100%;
+            cursor: pointer;
+
+            &__image-wrapper {
+                position: relative;
+                width: 100%;
+                padding-bottom: 66.67%;
+                overflow: hidden;
+                background: #f9f9f9;
+            }
+
+            &__image {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            &__content {
+                padding: 28px 24px;
+                @include flex-column;
+                flex-grow: 1;
+            }
+
+            &__title {
+                font-size: 24px;
+                font-weight: 600;
+                line-height: 1.4;
+                color: $text-primary;
+                margin-bottom: 3rem;
+                letter-spacing: -0.4px;
+            }
+
+            &__meta {
+                @include flex-column;
+                gap: 16px;
+                margin-top: auto;
+            }
+
+            &__instructor {
+                @include flex-space-between;
+                margin-bottom: 2rem;
+
+                &-label {
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $text-primary;
+                }
+
+                &-name {
+                    font-size: 14px;
+                    color: $text-secondary;
+                    font-weight: 500;
+                }
+            }
+
+            &__footer {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                gap: 12px;
+
+                img {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+            &__score-wrapper {
+                @include flex-column; // Stack elements vertically
+                gap: 6px;
+                align-items: flex-start;
+            }
+
+            &__score-label {
+                font-size: $fs-14;
+                font-weight: $fw-600;
+                color: $text-primary;
+            }
+
+            &__score-text {
+                font-size: $fs-14;
+                color: $text-primary;
+                font-weight: 400;
+            }
+
+            &__score-bar {
+                width: 100px; // Fixed width to ensure visibility
+                height: 4px;
+                background: $border-color;
+                border-radius: 5px;
+                overflow: hidden;
+                flex-shrink: 0;
+
+                &-fill {
+                    height: 100%;
+                    background: $accent-yellow;
+                    border-radius: 2px;
+                }
+            }
+        }
+    }
+}
+
+.winner {
+    font-size: $fs-14;
+    margin-bottom: 1rem;
+}
+
+.winners_title {
+    font-size: 43px;
+    margin-bottom: 5rem;
+    font-weight: $fw-600;
+}
+
+.web_maker {
+    @include flex-start;
+    margin-top: 1rem;
+    gap: 13px;
+
+    .web_name {
+        font-size: $fs-20;
+    }
+
+    .small {
+        font-size: 10px;
+        color: $grey;
     }
 }
 
@@ -413,5 +555,16 @@ main {
         font-size: 9px;
         margin-left: -2px;
         margin-bottom: 12px;
+    }
+}
+
+.submitted {
+    @include flex-center;
+    margin-top: 4rem;
+    gap: 17px;
+
+    .view {
+        @include flex-center;
+        gap: 8px;
     }
 }

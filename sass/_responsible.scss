@@ -1,0 +1,14 @@
+@media (max-width: 768px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .card__title {
+        font-size: 18px;
+    }
+
+    .card__content {
+        padding: 24px 20px;
+    }
+}
