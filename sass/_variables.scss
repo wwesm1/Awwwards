@@ -19,6 +19,50 @@ $text-secondary: #666;
 $border-color: #e5e5e5;
 $accent-yellow: #FFF083;
 $bg-light: #f8f8f8;
+$font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+$font-size-sm: 13px;
+$font-size-base: 14px;
+$font-size-nav: 14px;
+
+// Colors
+$clr-bg: #ffffff;
+$clr-bg-input: #f3f3f3;
+$clr-bg-modal: #ffffff;
+$clr-bg-active: #efefef;
+$clr-bg-hover: #f9f9f9;
+
+$clr-text: #111111;
+$clr-text-muted: #666666;
+$clr-text-count: #aaaaaa;
+$clr-text-placeholder: #888888;
+
+$clr-border: #e5e5e5;
+$clr-icon: #888888;
+
+$clr-btn-pro-bg: #111111;
+$clr-btn-pro-text: #ffffff;
+$clr-badge-bg: #111111;
+$clr-badge-text: #ffffff;
+
+// Layout
+$navbar-height: 62px;
+$navbar-padding: 0 20px;
+$input-height: 38px;
+$input-radius: 7px;
+$modal-radius: 0 0 10px 10px;
+$btn-radius: 6px;
+
+// Shadows & effects
+$modal-shadow: 0 12px 40px rgba(0, 0, 0, 0.07), 0 2px 8px rgba(0, 0, 0, 0.04);
+$overlay-blur: 5px;
+$overlay-bg: rgba(255, 255, 255, 0.5);
+
+// Transitions
+$t-fast: 0.12s ease;
+$t-base: 0.18s ease;
+
+// Spacing
+$col-nav-width: 190px;
 $font-size: 12px;
 $shine-duration: 20s;
 $tr: all 0.3s ease;

@@ -51,6 +51,72 @@
         <button class="submit">Submit Website</button>
       </a>
     </div>
+    <div class="search-modal" id="searchModal">
+      <div class="search-modal__body">
+        <div class="search-modal__col search-modal__col--nav">
+          <ul class="search-modal__nav-list">
+            <li class="search-modal__nav-item search-modal__nav-item--active">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg>
+              Trending
+            </li>
+            <li class="search-modal__nav-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="3" y="3" width="7" height="7" />
+                <rect x="14" y="3" width="7" height="7" />
+                <rect x="3" y="14" width="7" height="7" />
+                <rect x="14" y="14" width="7" height="7" />
+              </svg>
+              By Category
+            </li>
+            <li class="search-modal__nav-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="9" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+              By Technology
+            </li>
+            <li class="search-modal__nav-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="9" />
+              </svg>
+              Collections
+            </li>
+            <li class="search-modal__nav-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="3" y="3" width="18" height="18" rx="1" />
+              </svg>
+              Blog
+            </li>
+          </ul>
+        </div>
+        <div class="search-modal__col search-modal__col--results">
+          <ul class="search-modal__results-list">
+            <li class="search-modal__result-item"><span>Portfolio Websites</span><span
+                class="search-modal__count">9365</span></li>
+            <li class="search-modal__result-item"><span>Free fonts</span><span class="search-modal__count">288</span>
+            </li>
+            <li class="search-modal__result-item"><span>Animated websites</span><span
+                class="search-modal__count">11059</span></li>
+            <li class="search-modal__result-item"><span>Sites of the Day</span><span
+                class="search-modal__count">6845</span></li>
+            <li class="search-modal__result-item"><span>Scrolling</span><span class="search-modal__count">5843</span>
+            </li>
+            <li class="search-modal__result-item"><span>One page design</span><span
+                class="search-modal__count">5779</span></li>
+            <li class="search-modal__result-item"><span>UI design</span><span class="search-modal__count">6931</span>
+            </li>
+            <li class="search-modal__result-item"><span>E-commerce layouts</span><span
+                class="search-modal__count">6291</span></li>
+            <li class="search-modal__result-item"><span>Architecture websites</span><span
+                class="search-modal__count">3091</span></li>
+            <li class="search-modal__result-item"><span>Photography websites</span><span
+                class="search-modal__count">1735</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </nav>
   <main>
     <section class="hero">
@@ -704,7 +770,7 @@
             <img src="./assets/photos/fpers1.jpg" alt="Learn UI Design with Figma from Scratch" class="card__image" />
           </div>
           <div class="card__content">
-            <h3 class="card__title">Learn UI Design with Figma from<br/> Scratch</h3>
+            <h3 class="card__title">Learn UI Design with Figma from<br /> Scratch</h3>
 
             <div class="card__meta">
               <div class="card__instructor">
@@ -729,7 +795,8 @@
         <!-- Card 2 -->
         <div class="card">
           <div class="card__image-wrapper">
-            <img src="./assets/photos/fpers2.jpg" alt="Nordic Design Intensive Course: Complete Branding" class="card__image" />
+            <img src="./assets/photos/fpers2.jpg" alt="Nordic Design Intensive Course: Complete Branding"
+              class="card__image" />
           </div>
           <div class="card__content">
             <h3 class="card__title">Nordic Design Intensive Course: Complete Branding</h3>
@@ -757,7 +824,8 @@
         <!-- Card 3 -->
         <div class="card">
           <div class="card__image-wrapper">
-            <img src="./assets/photos/fpers3.webp" alt="Innovative Web Design in Figma: A Step-by-Step Process" class="card__image" />
+            <img src="./assets/photos/fpers3.webp" alt="Innovative Web Design in Figma: A Step-by-Step Process"
+              class="card__image" />
           </div>
           <div class="card__content">
             <h3 class="card__title">Innovative Web Design in Figma: A Step-by-Step Process</h3>
@@ -782,11 +850,75 @@
           </div>
         </div>
       </div>
+      <div class="submitted">
+        <p>Check out all submitted websites</p>
+        <div class="view">
+          <img src="./assets/svg/move-right.svg">
+          <a class="hover-underline">View Academy</a>
+        </div>
+      </div>
+    </section>
+    <section class="collections container">
+      <p class="winner">Collections</p>
+      <p class="winners_title">Explore a wide<br />variety of collections.</p>
+      <div class="cards">
+        <a href="#">
+          <div class="card">
+            <div class="img_card">
+              <img src="./assets/photos/big_card1.jpg" class="main_img">
+              <div class="smth">
+                <div class="words">
+                  <p class="web">COLLECTION</p>
+                  <p class="web_title">Inspiration</p>
+                </div>
+              </div>
+            </div>
+            <div class="web_maker">
+              <div class="flex">
+                <p class="web_name">Text Marquee animation</p>
+                <p class="small">followed by</p>
+              </div>
+              <div class="hero__desctiption">
+                <img src="./assets/photos/smallimg1.jpg" class="first">
+                <img src="./assets/photos/smallimg2.jpg">
+                <img src="./assets/photos/smallimg3.jpg">
+                <span class="pro">30+</span>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a href="#">
+          <div class="card">
+            <div class="img_card">
+              <img src="./assets/photos/big_card2.jpg" class="main_img">
+              <div class="smth">
+                <div class="words">
+                  <p class="web">COLLECTION</p>
+                  <p class="web_title">Web Technology</p>
+                </div>
+              </div>
+            </div>
+            <div class="web_maker">
+              <div class="flex">
+                <p class="web_name">WebGL / HTML5 Games</p>
+                <p class="small">followed by</p>
+              </div>
+              <div class="hero__desctiption">
+                <img src="./assets/photos/smallimg1.jpg">
+                <img src="./assets/photos/smallimg2.jpg">
+                <img src="./assets/photos/smallimg3.jpg">
+                <span class="pro">30+</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
     </section>
   </main>
 
+  <div class="search-overlay" id="searchOverlay"></div>
 
-
+  <script src="./script.js"></script>
 </body>
 
 </html>

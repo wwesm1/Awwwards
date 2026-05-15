@@ -410,30 +410,28 @@ main .hero__desctiption span {
 main .winners .cards {
   margin-bottom: 2rem;
 }
-main .academy .winner {
+main .winner {
   margin-top: 10rem;
 }
 main .academy .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  width: 500px;
-  gap: 30px;
-  padding: 20px;
+  gap: 20px;
 }
 main .academy .card {
   background: #fff;
-  border-radius: 8px;
+  border-radius: 16px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 100%;
   cursor: pointer;
 }
 main .academy .card__image-wrapper {
   position: relative;
   width: 100%;
-  padding-bottom: 66.67%;
+  padding-top: 0%;
+  padding-bottom: 55%;
   overflow: hidden;
   background: #f9f9f9;
 }
@@ -523,6 +521,22 @@ main .academy .card__score-bar-fill {
   background: #FFF083;
   border-radius: 2px;
 }
+main .collections .img_card {
+  width: 702px;
+}
+main .collections .hero__desctiption img {
+  border: 2px solid #fff;
+  margin-left: -1rem;
+  width: 40px;
+}
+main .collections .hero__desctiption .first {
+  margin-left: 0;
+}
+main .collections .hero__desctiption .pro {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 10px;
+}
 
 .winner {
   font-size: 14px;
@@ -548,6 +562,12 @@ main .academy .card__score-bar-fill {
 .web_maker .small {
   font-size: 10px;
   color: #383838;
+}
+.web_maker .flex {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 13px;
 }
 
 .hero__desctiption {
@@ -580,6 +600,144 @@ main .academy .card__score-bar-fill {
   align-items: center;
   justify-content: center;
   gap: 8px;
+}
+
+nav {
+  position: relative;
+}
+nav .input-container.is-open input {
+  background-color: #fff;
+  border-radius: 8px 8px 0 0;
+}
+nav .input-container.is-open .field-icon {
+  opacity: 0.4;
+}
+nav .search-modal {
+  position: absolute;
+  top: 100%;
+  left: 40px;
+  right: 40px;
+  max-width: 1600px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.07);
+  z-index: 201;
+  overflow: hidden;
+  display: flex;
+  opacity: 0;
+  transform: translateY(-4px);
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+nav .search-modal.is-open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+nav .search-modal__col--nav {
+  width: 220px;
+  flex-shrink: 0;
+  border-right: 1px solid #ebebeb;
+  padding: 8px 0;
+}
+nav .search-modal__col--results {
+  flex: 1;
+  padding: 8px 0;
+}
+nav .search-modal__nav-list, nav .search-modal__results-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav .search-modal__nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 24px;
+  font-size: 14px;
+  color: #111;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+nav .search-modal__nav-item svg {
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+nav .search-modal__nav-item:hover {
+  background: #f7f7f7;
+}
+nav .search-modal__nav-item--active {
+  background: #efefef;
+  font-weight: 600;
+}
+nav .search-modal__nav-item--active svg {
+  opacity: 1;
+}
+nav .search-modal__result-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 28px;
+  font-size: 14px;
+  color: #111;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+nav .search-modal__result-item:hover {
+  background: #f7f7f7;
+}
+nav .search-modal__count {
+  font-size: 13px;
+  color: #aaa;
+  font-variant-numeric: tabular-nums;
+}
+
+.search-overlay {
+  position: fixed;
+  inset: 62px 0 0 0;
+  background: rgba(5, 5, 5, 0.45);
+  z-index: 199;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+}
+.search-overlay.is-active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+nav {
+  position: relative;
+}
+nav .nav__items {
+  transition: opacity 0.2s ease, width 0.2s ease;
+  overflow: hidden;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+nav .nav__items.is-hidden {
+  opacity: 0;
+  width: 0;
+  gap: 0;
+  pointer-events: none;
+}
+nav .input-container {
+  width: 500px;
+  transition: width 0.25s ease;
+}
+nav .input-container.is-open {
+  width: 900px;
+}
+nav .input-container.is-open input {
+  background-color: #fff;
+  border-radius: 8px 8px 0 0;
+}
+nav .input-container.is-open .field-icon {
+  opacity: 0.4;
 }
 
 @media (max-width: 768px) {

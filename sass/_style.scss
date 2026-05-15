@@ -389,31 +389,31 @@ main {
         }
     }
 
+    .winner {
+        margin-top: 10rem;
+    }
+
     .academy {
-        .winner {
-            margin-top: 10rem;
-        }
+
 
         .cards-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            width: 500px;
-            gap: 30px;
-            padding: 20px;
+            gap: 20px;
         }
 
         .card {
             background: #fff;
-            border-radius: 8px;
+            border-radius: 16px;
             overflow: hidden;
             @include flex-column;
-            height: 100%;
             cursor: pointer;
 
             &__image-wrapper {
                 position: relative;
                 width: 100%;
-                padding-bottom: 66.67%;
+                padding-top: 0%;
+                padding-bottom: 55%;
                 overflow: hidden;
                 background: #f9f9f9;
             }
@@ -511,6 +511,30 @@ main {
             }
         }
     }
+
+    .collections {
+        .img_card {
+            width: 702px;
+        }
+
+        .hero__desctiption {
+            img {
+                border: 2px solid $white-color;
+                margin-left: -1rem;
+                width: 40px;
+            }
+
+            .first {
+                margin-left: 0;
+            }
+
+            .pro {
+                font-size: $fs-14;
+                font-weight: $fw-600;
+                margin-top: 10px;
+            }
+        }
+    }
 }
 
 .winner {
@@ -536,6 +560,11 @@ main {
     .small {
         font-size: 10px;
         color: $grey;
+    }
+
+    .flex {
+        @include flex-start;
+        gap: 13px;
     }
 }
 
@@ -566,5 +595,178 @@ main {
     .view {
         @include flex-center;
         gap: 8px;
+    }
+}
+
+nav {
+    position: relative;
+
+    .input-container {
+
+
+        &.is-open {
+            input {
+                background-color: #fff;
+                border-radius: 8px 8px 0 0;
+            }
+
+            .field-icon {
+                opacity: 0.4;
+            }
+        }
+    }
+
+    // ── Modal: full nav width, anchored to nav not input ──────────────
+    .search-modal {
+        position: absolute;
+        top: 100%; // flush below the nav bar
+        left: 40px; // full width from nav edge
+        right: 40px;
+        max-width: 1600px; // matches your container max-width
+        margin: 0 auto;
+        background: #fff;
+        border: 1px solid #e5e5e5;
+        border-top: none;
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.07);
+        z-index: 201;
+        overflow: hidden;
+        display: flex;
+
+        // hidden state
+        opacity: 0;
+        transform: translateY(-4px);
+        pointer-events: none;
+        transition: opacity 0.18s ease, transform 0.18s ease;
+
+        &.is-open {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+
+        &__col {
+            &--nav {
+                width: 220px;
+                flex-shrink: 0;
+                border-right: 1px solid #ebebeb;
+                padding: 8px 0;
+            }
+
+            &--results {
+                flex: 1;
+                padding: 8px 0;
+            }
+        }
+
+        &__nav-list,
+        &__results-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        &__nav-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 24px;
+            font-size: $fs-14;
+            color: #111;
+            cursor: pointer;
+            transition: $tr;
+            user-select: none;
+
+            svg {
+                opacity: 0.5;
+                flex-shrink: 0;
+            }
+
+            &:hover {
+                background: #f7f7f7;
+            }
+
+            &--active {
+                background: #efefef;
+                font-weight: $fw-600;
+
+                svg {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &__result-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 28px;
+            font-size: $fs-14;
+            color: #111;
+            cursor: pointer;
+            transition: $tr;
+
+            &:hover {
+                background: #f7f7f7;
+            }
+        }
+
+        &__count {
+            font-size: 13px;
+            color: #aaa;
+            font-variant-numeric: tabular-nums;
+        }
+    }
+}
+
+.search-overlay {
+    position: fixed;
+    inset: 62px 0 0 0;
+    background: rgba(5, 5, 5, 0.45);
+    z-index: 199;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease;
+
+    &.is-active {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+nav {
+    position: relative;
+
+    .nav__items {
+        transition: opacity 0.2s ease, width 0.2s ease;
+        overflow: hidden;
+        white-space: nowrap;
+        flex-shrink: 0;
+
+        &.is-hidden {
+            opacity: 0;
+            width: 0;
+            gap: 0;
+            pointer-events: none;
+        }
+    }
+
+    .input-container {
+        // replace your fixed width with this:
+        width: 500px;
+        transition: width 0.25s ease;
+
+        &.is-open {
+            width: 900px; // expands into the nav items space
+
+            input {
+                background-color: #fff;
+                border-radius: 8px 8px 0 0;
+            }
+
+            .field-icon {
+                opacity: 0.4;
+            }
+        }
     }
 }
