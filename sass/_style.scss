@@ -1079,3 +1079,77 @@ nav {
         background: #fafafa;
     }
 }
+
+.down_nav {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    background: rgba($bg-dark, 0.8); // Added slight transparency
+    backdrop-filter: blur(12px);
+    border-radius: 10px;
+    padding: 6px; // Reduced from 8px
+    border: 1px solid $border-color;
+    z-index: 1000;
+
+    .logo_w {
+        background-color: #191919;
+        padding: 17px 20px; // Much smaller than 24px
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+    }
+
+    .down_nav_items {
+        display: flex;
+        list-style: none;
+        margin: 0 0.75rem;
+        background-color: $grey;
+        padding: 6px; // Reduced from 10px
+        border-radius: 8px;
+        gap: 6px; // Tighter gap
+
+        li {
+            border: 1px solid #444;
+            border-radius: 6px;
+
+            a {
+                text-decoration: none;
+                color: rgba(255, 255, 255, 0.5);
+                font-size: 0.8rem; // Slightly smaller text
+                padding: 10px 12px; // Slimmer clickable area
+                display: block;
+                border-radius: 5px;
+                border: 1px solid transparent;
+                transition: all 0.2s ease-in-out;
+
+                &:hover {
+                    color: white;
+                }
+
+                &.active {
+                    color: white;
+                    border: 1px solid #888;
+                    background: rgba(255, 255, 255, 0.1);
+                }
+            }
+        }
+    }
+
+    .visit {
+        background: #f0f0f0;
+        border: none;
+        padding: 15px 16px; // More compact button
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 0.8rem;
+        cursor: pointer;
+        transition: transform 0.1s active;
+
+        &:hover {
+            background: white;
+        }
+    }
+}

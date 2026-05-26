@@ -511,7 +511,7 @@ main .academy .card__score-text {
 main .academy .card__score-bar {
   width: 100px;
   height: 4px;
-  background: #e5e5e5;
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
   overflow: hidden;
   flex-shrink: 0;
@@ -1034,6 +1034,72 @@ nav .input-container.is-open .field-icon {
 .social-btn:hover {
   border-color: #999;
   background: #fafafa;
+}
+
+.down_nav {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  background: rgba(30, 30, 30, 0.8);
+  backdrop-filter: blur(12px);
+  border-radius: 10px;
+  padding: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1000;
+}
+.down_nav .logo_w {
+  background-color: #191919;
+  padding: 17px 20px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+}
+.down_nav .down_nav_items {
+  display: flex;
+  list-style: none;
+  margin: 0 0.75rem;
+  background-color: #383838;
+  padding: 6px;
+  border-radius: 8px;
+  gap: 6px;
+}
+.down_nav .down_nav_items li {
+  border: 1px solid #444;
+  border-radius: 6px;
+}
+.down_nav .down_nav_items li a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  padding: 10px 12px;
+  display: block;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+.down_nav .down_nav_items li a:hover {
+  color: white;
+}
+.down_nav .down_nav_items li a.active {
+  color: white;
+  border: 1px solid #888;
+  background: rgba(255, 255, 255, 0.1);
+}
+.down_nav .visit {
+  background: #f0f0f0;
+  border: none;
+  padding: 15px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: transform 0.1s active;
+}
+.down_nav .visit:hover {
+  background: white;
 }
 
 @media (max-width: 768px) {

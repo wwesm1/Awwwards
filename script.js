@@ -85,3 +85,44 @@ function closeModal(overlay) {
     overlay.classList.remove('is-open');
     document.body.style.overflow = '';
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.down_nav_items a');
+    const sections = document.querySelectorAll('[id]'); // All elements with IDs
+
+    function updateActiveLink() {
+        let current = '';
+
+        // Find which section is currently in view
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+
+            if (scrollY >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        // Update active class
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // Handle clicks
+    navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            navLinks.forEach(item => item.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+
+    // Handle scroll
+    window.addEventListener('scroll', updateActiveLink);
+    
+    // Initial call
+    updateActiveLink();
+});
