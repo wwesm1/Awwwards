@@ -56,15 +56,15 @@ document.getElementById('sign-up').addEventListener('click', () => {
 document.getElementById('close-login').addEventListener('click', () => closeModal(loginModal));
 document.getElementById('close-signup').addEventListener('click', () => closeModal(signupModal));
 
-// Switch between modals
-document.getElementById('switch-to-signup').addEventListener('click', () => {
-    closeModal(loginModal);
-    signupModal.classList.add('is-open');
-});
-document.getElementById('switch-to-login').addEventListener('click', () => {
-    closeModal(signupModal);
-    loginModal.classList.add('is-open');
-});
+// // Switch between modals
+// document.getElementById('switch-to-signup').addEventListener('click', () => {
+//     closeModal(loginModal);
+//     signupModal.classList.add('is-open');
+// });
+// document.getElementById('switch-to-login').addEventListener('click', () => {
+//     closeModal(signupModal);
+//     loginModal.classList.add('is-open');
+// });
 
 // Click backdrop to close
 [loginModal, signupModal].forEach(overlay => {
@@ -93,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateActiveLink() {
         let current = '';
 
-        // Find which section is currently in view
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
@@ -102,8 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 current = section.getAttribute('id');
             }
         });
-
-        // Update active class
         navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === `#${current}`) {
@@ -125,4 +122,64 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initial call
     updateActiveLink();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.agency-card').forEach(card => {
+    const slides = card.querySelectorAll('.slide');
+    const dots   = card.querySelectorAll('.dot');
+    let current  = 0;
+    let timer    = null;
+
+    function goTo(index) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = (index + slides.length) % slides.length;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+    }
+
+    function startAuto() {
+      timer = setInterval(() => goTo(current + 1), 3000);
+    }
+
+    function stopAuto() {
+      clearInterval(timer);
+    }
+
+    // Dot click
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        stopAuto();
+        goTo(i);
+        startAuto();
+      });
+    });
+
+    // Drag / swipe on slider
+    const track = card.querySelector('.slider-track');
+    let startX = 0;
+
+    track.addEventListener('mousedown', e => { startX = e.clientX; });
+    track.addEventListener('mouseup',   e => {
+      const diff = startX - e.clientX;
+      if (Math.abs(diff) > 40) {
+        stopAuto();
+        goTo(diff > 0 ? current + 1 : current - 1);
+        startAuto();
+      }
+    });
+
+    track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend',   e => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) {
+        stopAuto();
+        goTo(diff > 0 ? current + 1 : current - 1);
+        startAuto();
+      }
+    });
+
+    startAuto();
+  });
 });

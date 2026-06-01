@@ -1080,6 +1080,240 @@ nav {
     }
 }
 
+.creators {
+    margin-top: 10rem;
+    .creator {
+        font-size: $fs-14;
+        text-align: center;
+    }
+
+    .emoji {
+        .creators_title {
+            font-size: 120px;
+            font-weight: $fw-600;
+            text-align: center;
+            margin-top: 2rem;
+            position: relative;
+        }
+    }
+
+    .cards-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        width: 100%;
+        max-width: 1400px;
+    }
+
+    // ── Single Card ────────────────────────────────────────────
+    .agency-card {
+        background: $card-bg;
+        border-radius: 4px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    // ── Top Section (dark image area) ─────────────────────────
+    .card-top {
+        background: $card-top-bg;
+        position: relative;
+        padding: 32px 32px 0 32px;
+        min-height: 440px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    // ── Agency Logo ────────────────────────────────────────────
+    .agency-logo {
+        position: absolute;
+        top: 28px;
+        left: 28px;
+        z-index: 10;
+        border-radius: 50%;
+        background: #111;
+        color: $text-primary;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        user-select: none;
+
+        &.upqode-logo {
+            width: 52px;
+            height: 52px;
+            background: #1a1a1a;
+            font-size: 9px;
+            letter-spacing: 0.08em;
+
+            img {
+                border-radius: 50%;
+            }
+        }
+
+        &.fiftyseven-logo {
+            width: 52px;
+            height: 52px;
+            background: transparent;
+
+            img {
+                border-radius: 50%;
+            }
+        }
+    }
+
+    // ── Slider ─────────────────────────────────────────────────
+    .card-slider {
+        margin-top: auto;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        overflow: hidden;
+    }
+
+    .slider-track {
+        position: relative;
+        width: 100%;
+        height: 240px;
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-end;
+
+            &.active {
+                opacity: 1;
+            }
+
+            img {
+                // Matches the screenshot: image floats top-right, slightly cropped left
+                max-width: 90%;
+                max-height: 100%;
+                object-fit: contain;
+                object-position: top right;
+                display: block;
+            }
+        }
+    }
+
+    // ── Dots ───────────────────────────────────────────────────
+    .slider-dots {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 18px 0 20px 0;
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: $dot-inactive;
+            transition: background 0.3s ease;
+            cursor: pointer;
+
+            &.active {
+                background: $dot-active;
+            }
+        }
+    }
+
+    // ── Bottom Section (info area) ─────────────────────────────
+    .card-bottom {
+        background: $card-bg;
+        padding: 28px 32px 30px 32px;
+    }
+
+    .card-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .region {
+        display: block;
+        color: $text-muted;
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: 0.01em;
+        margin-bottom: 8px;
+    }
+
+    .name-works-row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+
+    .agency-name {
+        color: $text-primary;
+        font-size: clamp(36px, 4vw, 52px);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1;
+        text-transform: uppercase;
+    }
+
+    .works-badge {
+        flex-shrink: 0;
+        background: $badge-bg;
+        border: 1px solid $badge-border;
+        border-radius: 6px;
+        padding: 10px 18px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+        min-width: 72px;
+
+        .works-label {
+            color: $text-muted;
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            text-transform: none;
+        }
+
+        .works-count {
+            color: $text-primary;
+            font-size: 26px;
+            font-weight: 600;
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+    }
+
+    // ── Footer row (url + awards) ──────────────────────────────
+    .card-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+        padding-top: 18px;
+
+        .agency-url {
+            color: $text-muted;
+            font-size: 13px;
+            font-weight: 400;
+        }
+
+        .awards {
+            color: $text-muted;
+            font-size: 13px;
+            font-weight: 400;
+        }
+    }
+}
+
 .down_nav {
     position: fixed;
     bottom: 1.5rem;
