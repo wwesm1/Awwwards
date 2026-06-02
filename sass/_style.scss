@@ -1082,6 +1082,7 @@ nav {
 
 .creators {
     margin-top: 10rem;
+
     .creator {
         font-size: $fs-14;
         text-align: center;
@@ -1311,6 +1312,30 @@ nav {
             font-size: 13px;
             font-weight: 400;
         }
+    }
+
+    .peoples {
+        display: grid;
+        grid-template-columns: 3fr 1fr 1fr 2fr;
+        gap: 10pc;
+    }
+
+    .names,
+    .profiles,
+    .awards,
+    .categories {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .names>*,
+    .profiles>*,
+    .awards>*,
+    .categories>* {
+        min-height: 80px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px dotted rgba(255, 0, 0, 0.25);
     }
 }
 

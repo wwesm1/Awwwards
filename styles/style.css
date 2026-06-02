@@ -1231,6 +1231,27 @@ nav .input-container.is-open .field-icon {
   font-size: 13px;
   font-weight: 400;
 }
+.creators .peoples {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 2fr;
+  gap: 10pc;
+}
+.creators .names,
+.creators .profiles,
+.creators .awards,
+.creators .categories {
+  display: flex;
+  flex-direction: column;
+}
+.creators .names > *,
+.creators .profiles > *,
+.creators .awards > *,
+.creators .categories > * {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px dotted rgba(255, 0, 0, 0.25);
+}
 
 .down_nav {
   position: fixed;
