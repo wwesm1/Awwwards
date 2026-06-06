@@ -1232,9 +1232,27 @@ nav .input-container.is-open .field-icon {
   font-weight: 400;
 }
 .creators .peoples {
+  margin: 3rem auto;
+  background-color: #ffffff;
+  border-radius: 0;
+}
+.creators .people {
   display: grid;
-  grid-template-columns: 3fr 1fr 1fr 2fr;
-  gap: 10pc;
+  grid-template-columns: 2fr 1fr 0.8fr 1.2fr;
+  align-items: center;
+  gap: 30px;
+  padding: 25px 40px;
+  border-bottom: 1px dotted #d5d5d5;
+}
+.creators .people:last-child {
+  border-bottom: none;
+}
+.creators .peoples_title {
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+.creators .names {
+  margin-left: -20rem;
 }
 .creators .names,
 .creators .profiles,
@@ -1243,14 +1261,13 @@ nav .input-container.is-open .field-icon {
   display: flex;
   flex-direction: column;
 }
-.creators .names > *,
-.creators .profiles > *,
-.creators .awards > *,
-.creators .categories > * {
-  min-height: 80px;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px dotted rgba(255, 0, 0, 0.25);
+.creators .names p,
+.creators .profiles p,
+.creators .awards p,
+.creators .categories p {
+  font-size: 15px;
+  color: #333;
+  padding: 0;
 }
 
 .down_nav {

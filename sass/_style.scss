@@ -1315,28 +1315,50 @@ nav {
     }
 
     .peoples {
-        display: grid;
-        grid-template-columns: 3fr 1fr 1fr 2fr;
-        gap: 10pc;
+      margin: 3rem auto;
+      background-color: #ffffff;
+      border-radius: 0;
+    }
+ 
+    .people {
+      display: grid;
+      grid-template-columns: 2fr 1fr 0.8fr 1.2fr;
+      align-items: center;
+      gap: 30px;
+      padding: 25px 40px;
+      border-bottom: 1px dotted #d5d5d5;
+    }
+ 
+    .people:last-child {
+      border-bottom: none;
+    }
+ 
+    .peoples_title {
+      font-size: 14px;
+      letter-spacing: 0.5px;
     }
 
+    .names {
+        margin-left: -20rem;
+    }
+ 
     .names,
     .profiles,
     .awards,
     .categories {
-        display: flex;
-        flex-direction: column;
+      display: flex;
+      flex-direction: column;
+    }
+ 
+    .names p,
+    .profiles p,
+    .awards p,
+    .categories p {
+      font-size: 15px;
+      color: #333;
+      padding: 0;
     }
 
-    .names>*,
-    .profiles>*,
-    .awards>*,
-    .categories>* {
-        min-height: 80px;
-        display: flex;
-        align-items: center;
-        border-bottom: 1px dotted rgba(255, 0, 0, 0.25);
-    }
 }
 
 .down_nav {
