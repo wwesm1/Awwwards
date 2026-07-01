@@ -478,7 +478,7 @@ main {
             }
 
             &__score-wrapper {
-                @include flex-column; // Stack elements vertically
+                @include flex-column;
                 gap: 6px;
                 align-items: flex-start;
             }
@@ -496,7 +496,7 @@ main {
             }
 
             &__score-bar {
-                width: 100px; // Fixed width to ensure visibility
+                width: 100px;
                 height: 4px;
                 background: $border-color;
                 border-radius: 5px;
@@ -621,13 +621,13 @@ nav {
         }
     }
 
-    // ── Modal: full nav width, anchored to nav not input ──────────────
+ 
     .search-modal {
         position: absolute;
-        top: 3.9rem; // flush below the nav bar
-        left: 40px; // full width from nav edge
+        top: 3.9rem; 
+        left: 40px; 
         right: 40px;
-        max-width: 1600px; // matches your container max-width
+        max-width: 1600px; 
         margin: 0 auto;
         background: #E9E9E9;
         border: 1px solid #E9E9E9;
@@ -638,8 +638,6 @@ nav {
         overflow: hidden;
         display: flex;
         max-height: 600px;
-
-        // hidden state
         opacity: 0;
         transform: translateY(-4px);
         pointer-events: none;
@@ -868,11 +866,11 @@ nav {
     width: 40%;
     flex-shrink: 0;
     background: #f0f0f0;
-    padding: 70px 44px; // was 50px 44px
+    padding: 70px 44px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 620px; // was unset
+    min-height: 620px;
     border-radius: 20px 0 0 20px;
 }
 
@@ -918,7 +916,7 @@ nav {
 
 .modal__right {
     flex: 1;
-    padding: 70px 56px; // was 50px 56px
+    padding: 70px 56px;
     overflow-y: visible;
     border-radius: 0 20px 20px 0;
 }
@@ -1106,7 +1104,6 @@ nav {
         max-width: 1400px;
     }
 
-    // ── Single Card ────────────────────────────────────────────
     .agency-card {
         background: $card-bg;
         border-radius: 4px;
@@ -1116,7 +1113,6 @@ nav {
         cursor: pointer;
     }
 
-    // ── Top Section (dark image area) ─────────────────────────
     .card-top {
         background: $card-top-bg;
         position: relative;
@@ -1126,7 +1122,6 @@ nav {
         flex-direction: column;
     }
 
-    // ── Agency Logo ────────────────────────────────────────────
     .agency-logo {
         position: absolute;
         top: 28px;
@@ -1166,7 +1161,6 @@ nav {
         }
     }
 
-    // ── Slider ─────────────────────────────────────────────────
     .card-slider {
         margin-top: auto;
         flex: 1;
@@ -1195,7 +1189,6 @@ nav {
             }
 
             img {
-                // Matches the screenshot: image floats top-right, slightly cropped left
                 max-width: 90%;
                 max-height: 100%;
                 object-fit: contain;
@@ -1205,7 +1198,6 @@ nav {
         }
     }
 
-    // ── Dots ───────────────────────────────────────────────────
     .slider-dots {
         display: flex;
         align-items: center;
@@ -1226,7 +1218,6 @@ nav {
         }
     }
 
-    // ── Bottom Section (info area) ─────────────────────────────
     .card-bottom {
         background: $card-bg;
         padding: 28px 32px 30px 32px;
@@ -1293,7 +1284,6 @@ nav {
         }
     }
 
-    // ── Footer row (url + awards) ──────────────────────────────
     .card-footer {
         display: flex;
         align-items: center;
@@ -1445,7 +1435,6 @@ nav {
         }
     }
 
-    // Webflow-style badge on the image
     &__badge {
         position: absolute;
         right: 16px;
@@ -1467,7 +1456,6 @@ nav {
         }
     }
 
-    // Body: category + title
     &__body {
         padding: 28px 6px 20px;
         flex: 1;
@@ -1492,7 +1480,6 @@ nav {
         overflow: hidden;
     }
 
-    // Meta: author + price
     &__meta {
         display: flex;
         align-items: center;
@@ -1533,7 +1520,6 @@ nav {
         font-weight: 400;
     }
 
-    // Footer: "View Product" + arrow
     &__footer {
         display: flex;
         align-items: center;
