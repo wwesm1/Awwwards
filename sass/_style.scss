@@ -1403,6 +1403,164 @@ nav {
     margin-top: 1rem;
 }
 
+.card {
+    display: flex;
+    flex-direction: column;
+    width: $card-width;
+    height: $card-height;
+    background: $color-white;
+    border-radius: $radius;
+    overflow: hidden;
+    flex-shrink: 0;
+
+    &__media {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: $media-height;
+        flex-shrink: 0;
+        overflow: hidden;
+        background: $color-black;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            display: block;
+            transition: transform $transition;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0);
+            transition: background $transition;
+            pointer-events: none;
+        }
+
+        &:hover::after {
+            background: rgba(0, 0, 0, 0.25);
+        }
+    }
+
+    // Webflow-style badge on the image
+    &__badge {
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background: $color-white;
+        padding: 6px 12px;
+        border-radius: 3px;
+        font-size: 13px;
+        font-weight: 600;
+        z-index: 2;
+
+        img {
+            width: 14px;
+            height: 14px;
+            transition: none;
+        }
+    }
+
+    // Body: category + title
+    &__body {
+        padding: 28px 6px 20px;
+        flex: 1;
+    }
+
+    &__category {
+        margin: 0 0 10px;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    // Meta: author + price
+    &__meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 6px;
+        border-top: 1px solid $color-border;
+        font-size: 15px;
+    }
+
+    &__author {
+        margin: 0;
+        color: $color-muted;
+
+        span {
+            color: $color-text;
+            font-weight: 700;
+        }
+    }
+
+    &__price {
+        display: flex;
+        gap: 4px;
+        margin: 0;
+    }
+
+    &__price-label {
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    &__price-amount {
+        font-size: 36px;
+        font-weight: 600;
+    }
+
+    &__price-currency {
+        font-size: 13px;
+        font-weight: 600;
+        color: $color-muted;
+    }
+
+    // Footer: "View Product" + arrow
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 22px 6px;
+        border-top: 1px solid $color-border;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+
+        span {
+            transition: opacity $transition;
+        }
+    }
+
+    &__arrow {
+        width: 22px;
+        height: 22px;
+        transition: transform $transition;
+    }
+
+    &__footer:hover &__arrow {
+        transform: translateX(4px);
+    }
+}
+
 .down_nav {
     position: fixed;
     bottom: 1.5rem;
